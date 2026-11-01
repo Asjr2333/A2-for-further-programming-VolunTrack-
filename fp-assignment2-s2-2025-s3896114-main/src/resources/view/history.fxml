@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1"
+            style="-fx-background-color: #f8fafc;">
+
+    <top>
+        <VBox spacing="15" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5, 0, 0, 1);">
+            <padding>
+                <Insets top="20" right="25" bottom="20" left="25"/>
+            </padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <Label text="Participation History" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1e293b;" HBox.hgrow="ALWAYS"/>
+                <Button fx:id="exportButton" text="Export to File"
+                        style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-size: 13px;
+                               -fx-font-weight: 600; -fx-background-radius: 6; -fx-padding: 8 16 8 16; -fx-cursor: hand;"/>
+                <Button fx:id="backButton" text="Back to Dashboard"
+                        style="-fx-background-color: #6366f1; -fx-text-fill: white; -fx-font-size: 13px;
+                               -fx-font-weight: 600; -fx-background-radius: 6; -fx-padding: 8 16 8 16; -fx-cursor: hand;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="20" right="25" bottom="20" left="25"/>
+            </padding>
+
+            <VBox style="-fx-background-color: white; -fx-background-radius: 10;
+                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+
+                <TableView fx:id="historyTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="regIdColumn" text="Reg ID" prefWidth="80"/>
+                        <TableColumn fx:id="titleColumn" text="Project" prefWidth="140"/>
+                        <TableColumn fx:id="locationColumn" text="Location" prefWidth="120"/>
+                        <TableColumn fx:id="dayColumn" text="Day" prefWidth="70"/>
+                        <TableColumn fx:id="slotsColumn" text="Slots" prefWidth="60"/>
+                        <TableColumn fx:id="hoursColumn" text="Hours" prefWidth="60"/>
+                        <TableColumn fx:id="contributionColumn" text="Value ($)" prefWidth="80"/>
+                        <TableColumn fx:id="dateColumn" text="Confirmed At" prefWidth="170"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>
